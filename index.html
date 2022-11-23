@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live-code-chal-9</title>
+    <style>
+        body{
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #h{
+            font-size: 0.8rem;
+        }
+        .output{
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div id="h">Click below to know a person with greater age.</div>
+        <button id="btn">click</button>
+        <div class="output" id="output"></div>
+    </main>
+    <script>
+        const hEl = document.getElementById("h");
+        const btnEl = document.getElementById("btn");
+        const outputEl = document.getElementById("output");
+
+        let person1 = {
+            name: "Ram",
+            age: 25,
+            yuga:  "Treta"
+        }
+        let person2 = {
+            name: "Krishna",
+            age: 31,
+            yuga:  "dwapar"
+        }
+        
+        let ageFunc = function(){
+            if(person1.age < person2.age){
+                outputEl.innerText = ` ${person2.name} (${person2.name} is ${person2.age}years old while ${person1.name} is ${person1.age}years old)`; 
+            }else{
+                outputEl.innerText = `${person1.name} (${person1.name} is ${person1.age}years old while ${person2.name} is ${person2.age}years old)`;
+            }
+        }
+
+    btnEl.addEventListener("click", ageFunc)
+    </script>
+</body>
+</html>
+
+
+
+
